@@ -1,0 +1,180 @@
+Screen1 As screen:
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        DelayItemLoading: =true
+        Items: =AddColumns(GroupBy(Filter(AfterHoursInsights, 'AfterHoursInsights (Views)'.AfterHoursView), "cre07_organization","OrgGroups" ), "TotalHours", Sum(OrgGroups,'After-hours collaboration hours'))
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =Min(160, Self.Height - 60)
+        X: =212
+        Y: =187
+        ZIndex: =1
+
+        Image1 As image:
+            Height: =128
+            OnSelect: =Select(Parent)
+            Width: =128
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Title1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.cre07_organization
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - Image1.Width - 104
+            X: =Image1.X + Image1.Width + 24
+            Y: =44
+            ZIndex: =2
+
+        Subtitle1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =Sum(ThisItem.OrgGroups, "cre07_afterhourscollaborationhours")
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title1.Width
+            X: =Title1.X
+            Y: =Title1.Y + Title1.Height + 4
+            ZIndex: =3
+
+        NextArrow1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="View item details"
+            Width: =60
+            X: =Parent.TemplateWidth - Self.Width - 5
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator1 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+    "Gallery2 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        DelayItemLoading: =true
+        Height: =260
+        Items: |-
+            =Filter(Office365Outlook.V4CalendarGetItems(First(Office365Outlook.CalendarGetTablesV2().value).name).value, Hour(start)> Hour("5:00PM") || Hour(start)< Hour("9:00AM"))
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =168
+        Width: =455
+        X: =882
+        Y: =193
+        ZIndex: =1
+
+        Title3 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.subject
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =16
+            ZIndex: =1
+
+        Subtitle3 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =Text(DateTimeValue(ThisItem.start), DateTimeFormat.ShortTime)  & " " & DateDiff(ThisItem.start, ThisItem.end,TimeUnit.Minutes)/60 & " Hours"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =Title3.Y + Title3.Height + 2
+            ZIndex: =2
+
+        Body1 As label:
+            Height: =Self.Size * 4
+            OnSelect: =Select(Parent)
+            Overflow: =Overflow.Scroll
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =CountRows(Split(ThisItem.requiredAttendees & ThisItem.optionalAttendees , ";"))
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =Subtitle3.Y + Subtitle3.Height + 4
+            ZIndex: =3
+
+        NextArrow3 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="View item details"
+            Width: =60
+            X: =424
+            Y: =108
+            ZIndex: =4
+
+        Separator3 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+    Label1 As label:
+        Text: =Office365Users.MyProfileV2().department
+        X: =311
+        Y: =76
+        ZIndex: =2
+
+    Button1 As button:
+        Text: ="Save"
+        X: =785
+        Y: =76
+        ZIndex: =3
+
+    "ViewIn3D1 As 'View in 3D (preview)'.pcfdataset":
+        BackgroundFill: =RGBA(230, 235, 240, 1)
+        DisplayMode: =DisplayMode.Edit
+        Height: =400
+        OnModelLoad: =false
+        Width: =400
+        X: =42
+        Y: =76
+        ZIndex: =4
+
+    TextInput1 As text:
+        Default: ="Text input"
+        X: =949
+        Y: =573
+        ZIndex: =5
+

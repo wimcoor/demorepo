@@ -1,0 +1,137 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cre07_afterhoursinsights",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cre07_afterhoursinsight",
+    "MaxGetRowsCount": 500,
+    "Name": "AfterHoursInsights",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cre07_afterhourscallhours": "After-hours call hours",
+      "cre07_afterhourschathours": "After-hours chat hours",
+      "cre07_afterhourscollaborationhours": "After-hours collaboration hours",
+      "cre07_afterhoursemailhours": "After-hours email hours",
+      "cre07_afterhoursinsight_AsyncOperations": "System Jobs",
+      "cre07_afterhoursinsight_BulkDeleteFailures": "Bulk Delete Failures",
+      "cre07_afterhoursinsight_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cre07_afterhoursinsight_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cre07_afterhoursinsight_ProcessSession": "Process Sessions",
+      "cre07_afterhoursinsight_SyncErrors": "Sync Errors",
+      "cre07_afterhoursinsightid": "AfterHoursInsight",
+      "cre07_afterhoursmeetinghours": "After-hours meeting hours",
+      "cre07_afterhoursscheduledcallhours": "After-hours scheduled call hours",
+      "cre07_afterhoursunscheduledcallhours": "After-hours unscheduled call hours",
+      "cre07_domain": "Domain",
+      "cre07_isactive": "IsActive",
+      "cre07_metricdate": "MetricDate",
+      "cre07_organization": "Organization",
+      "cre07_personid": "PersonId",
+      "cre07_populationtype": "PopulationType",
+      "cre07_timezone": "TimeZone",
+      "cre07_weekenddays": "WeekendDays",
+      "cre07_workinghourscallhours": "Working-hours call hours",
+      "cre07_workinghourschathours": "Working-hours chat hours",
+      "cre07_workinghourscollaborationhours": "Working-hours collaboration hours",
+      "cre07_workinghoursemailhours": "Working-hours email hours",
+      "cre07_workinghoursmeetinghours": "Working-hours meeting hours",
+      "cre07_workinghoursscheduledcallhours": "Working-hours scheduled call hours",
+      "cre07_workinghoursunscheduledcallhours": "Working-hours unscheduled call hours",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "AfterHoursInsights",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "AfterHoursInsights (Views)",
+    "Name": "_cre07_afterhoursinsight_views",
+    "RelatedEntityName": "AfterHoursInsights",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "22bef3ee-7958-47a8-952f-57286e2c12a8": "AfterHoursInsight Associated View",
+      "3705fcff-5beb-ed11-a7c5-6045bd0339c8": "AfterHoursView",
+      "5757d47a-338b-4e03-b62c-ea490983ed4d": "Inactive AfterHoursInsights",
+      "70eefa7c-e5fb-4200-9a62-28b8c940489a": "AfterHoursInsight Lookup View",
+      "8520f804-5d03-4076-8893-a82985fa26bf": "AfterHoursInsight Advanced Find View",
+      "8a5a2b64-3759-4e17-9fe0-3dabe7dfb1e0": "Active AfterHoursInsights"
+    }
+  },
+  {
+    "DisplayName": "IsActive (AfterHoursInsights)",
+    "Name": "cre07_afterhoursinsight_cre07_isactive",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cre07_isactive",
+        "OptionSetReferenceEntityName": "AfterHoursInsights"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cre07_isactive",
+    "RelatedEntityName": "AfterHoursInsights",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (AfterHoursInsights)",
+    "Name": "cre07_afterhoursinsight_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "AfterHoursInsights"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "AfterHoursInsights",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (AfterHoursInsights)",
+    "Name": "cre07_afterhoursinsight_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "AfterHoursInsights"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "AfterHoursInsights",
+    "Type": "OptionSetInfo"
+  }
+]
